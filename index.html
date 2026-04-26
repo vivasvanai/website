@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vivasvan AI — Chemical Engineer & AI Enthusiast</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;600;700&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav id="navbar">
+    <div class="nav-logo">VA</div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-status">
+      <span class="status-dot" id="status-dot"></span>
+      <span>API&nbsp;<span id="api-status">checking…</span></span>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section id="hero">
+    <canvas id="starfield"></canvas>
+
+    <!-- floating ambient orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <div class="hero-content">
+      <div class="hero-tag">Chemical Engineer & AI Enthusiast</div>
+      <h1 class="hero-name">Vivasvan<br/><span class="accent">AI</span></h1>
+      <p class="hero-bio" id="typewriter"></p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">View Projects <span class="btn-arrow">→</span></a>
+        <a href="#contact" class="btn-outline">Get in Touch</a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>scroll</span>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ── -->
+  <section id="skills">
+    <div class="section-header">
+      <span class="section-tag">// capabilities</span>
+      <h2>Skills &amp; <span class="accent">Tools</span></h2>
+      <p class="section-sub">Data fetched from <code>GET /api/skills</code></p>
+    </div>
+    <div class="skills-grid" id="skills-grid">
+      <!-- populated by JS -->
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section id="projects">
+    <div class="section-header">
+      <span class="section-tag">// work</span>
+      <h2>Featured <span class="accent">Projects</span></h2>
+      <p class="section-sub">Data fetched from <code>GET /api/projects</code></p>
+    </div>
+    <div class="projects-grid" id="projects-grid">
+      <!-- populated by JS -->
+    </div>
+    <div class="projects-note" id="projects-note" style="display:none">
+      <div class="note-card">
+        <span class="note-icon">🚀</span>
+        <p>Currently in learning phase — projects coming soon as I build with FastAPI, ML, and more.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <div class="section-header">
+      <span class="section-tag">// connect</span>
+      <h2>Get in <span class="accent">Touch</span></h2>
+      <p class="section-sub">Form submits to <code>POST /api/contact</code></p>
+    </div>
+    <div class="contact-layout">
+
+      <div class="contact-info">
+        <a href="https://github.com/vivasvanai" target="_blank" rel="noopener" class="contact-link gh-link">
+          <div class="contact-icon">GH</div>
+          <div>
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">vivasvanai</span>
+          </div>
+        </a>
+        <a href="https://www.linkedin.com/in/vivasvanai/" target="_blank" rel="noopener" class="contact-link in-link">
+          <div class="contact-icon">IN</div>
+          <div>
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value">vivasvanai</span>
+          </div>
+        </a>
+        <a href="https://x.com/vivasvanai" target="_blank" rel="noopener" class="contact-link x-link">
+          <div class="contact-icon">𝕏</div>
+          <div>
+            <span class="contact-label">X (Twitter)</span>
+            <span class="contact-value">vivasvanai</span>
+          </div>
+        </a>
+        <a href="https://leetcode.com/vivasvanai/" target="_blank" rel="noopener" class="contact-link lc-link">
+          <div class="contact-icon">LC</div>
+          <div>
+            <span class="contact-label">LeetCode</span>
+            <span class="contact-value">vivasvanai</span>
+          </div>
+        </a>
+        <a href="https://youtube.com/@vivasvanai" target="_blank" rel="noopener" class="contact-link yt-link">
+          <div class="contact-icon">YT</div>
+          <div>
+            <span class="contact-label">YouTube</span>
+            <span class="contact-value">vivasvanai</span>
+          </div>
+        </a>
+        <a href="mailto:bhumitsinh9825@gmail.com" class="contact-link email-link">
+          <div class="contact-icon">@</div>
+          <div>
+            <span class="contact-label">Email</span>
+            <span class="contact-value">bhumitsinh9825@gmail.com</span>
+          </div>
+        </a>
+      </div>
+
+      <form class="contact-form" id="contact-form">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" name="name" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea name="message" rows="5" placeholder="What's on your mind?" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary btn-full" id="submit-btn">
+          <span>Send Message</span>
+          <span class="btn-arrow">→</span>
+        </button>
+        <div class="form-status" id="form-status"></div>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <p>Built with <span class="accent">FastAPI</span> + Vanilla JS &nbsp;·&nbsp; Vivasvan AI © 2025</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
